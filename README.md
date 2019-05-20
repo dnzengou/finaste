@@ -4,7 +4,7 @@
 
 ## demo
 
-![Alt text](css/img/wedding_Dez&Lindy_recto_2.jpg?raw=true "Shhttt!")
+![Alt text](css/img/.jpg?raw=true "Shhttt!")
 
 
 ### run
