@@ -1,10 +1,10 @@
-# :mag: knwoledge-managemet-demo for NIRDA 2.0 launch
+# :mag: Dez&Lindy
 
-Web App for media and text search for knowledge management purpose
+
 
 ## demo
 
-![Alt text](css/img/knowledge-management-demo.gif?raw=true "Gif short demo")
+![Alt text](css/img/wedding_Dez&Lindy_recto_2.jpg?raw=true "Shhttt!")
 
 
 ### run
@@ -13,8 +13,8 @@ Web App for media and text search for knowledge management purpose
 
 ## HOW IT WORKS
 
-<p>Enter text to search related content. Alternatively, lick on the cards of interest.</p>
-<p style="border-bottom: 1px solid #444; padding: 0 0 1em 0;">Click on a result to read.</p>
+<p>Not much to say here ;)</p>
+<p style="border-bottom: 1px solid #444; padding: 0 0 1em 0;"></p>
 
 
 
