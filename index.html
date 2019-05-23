@@ -1,9 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
     <title>Lindy & Dez Wedding</title>
-    <meta charset=utf-8>
-    <script type="text/javascript" src="d3.v3.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent black">
+    <meta name="author" author="@DesireYavro">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="all">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="css/img/favicons/favicon-32x32.png" />
+
+    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- bootstrap & font awesome components -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- end bootstrap -->
+    <meta name="theme-color" content="#ffffff">
 
 <!-- favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
@@ -15,205 +34,654 @@
 <meta name="theme-color" content="#ffffff">
 <!-- end favicons -->
 
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+    <style>
+    /* FontAwesome for working BootSnippet :> */
+
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    #team {
+        background: #fff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #108d6f;
+        border-color: #108d6f;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007b5e;
+        border-color: #007b5e;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    #team .card {
+        border: none;
+        background: #ffffff;
+    }
+
+    .image-flip:hover .backside,
+    .image-flip.hover .backside {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        border-radius: .25rem;
+    }
+
+    .image-flip:hover .frontside,
+    .image-flip.hover .frontside {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    .mainflip {
+        -webkit-transition: 3s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 3s;
+        -moz-transition: 3s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transition: 3s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .frontside {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        margin-bottom: 30px;
+    }
+
+    .backside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    }
+
+    .frontside,
+    .backside {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 3s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 3s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 3s;
+        -o-transform-style: preserve-3d;
+        -ms-transition: 3s;
+        -ms-transform-style: preserve-3d;
+        transition: 3s;
+        transform-style: preserve-3d;
+    }
+
+    .frontside .card,
+    .backside .card {
+        min-height: 312px;
+    }
+
+    .backside .card a {
+        font-size: 18px;
+        color: #007b5e !important;
+    }
+
+    .frontside .card .card-title,
+    .backside .card .card-title {
+        color: #007b5e !important;
+    }
+
+    .frontside .card .card-body img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px){
+    img.bg {
+    left: 50%;
+    margin-left: -512px; }
+}
+
+    $red: Tomato;
+$palered: #FFE8E3;
+
+#input {
+  width: 100%;
+  border: 0px;
+  border-bottom: solid black 5px;
+  height:100px;
+  font-size:70px;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+}
+#input:focus {
+  border-bottom-color: $red;
+  border-width: 10px;
+  outline: none;
+}
+#input:hover {
+  border-bottom-color: $red;
+  outline: none;
+}
+em {
+  background-color: $red;
+}
+ul {
+  list-style-type: none;
+  border-bottom-width: 0px;
+  padding:0px;
+}
+li {
+  padding: 10px;
+  transition: all 5s;
+  transition-timing-function: ease-in-out;
+}
+li:hover {
+  background-color: Tomato;
+}
+
+    </style>
 
 </head>
+
 <body>
-<div class="info"><span href="details.html"><img src="img/favicons/favicon-32x32.png" sizes="32x32" /></span> Lindy&Dez wedding <span class="example-count"></span> | <a href="./details.html">Event details</a> | <a class="about-link" href="">About</a></div>
-<div class="about-box">
+<img src="img/wedding_Dez&Lindy_recto_2.jpg" alt="" class="bg" />
 
-    <div class="about-close" style="cursor: pointer;">x</div>
+  <nav class="navbar navbar-toggleable-md sticky-top navbar-light bg-faded" style="background-color:transparent;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <!-- Logo -->
+                                                <div id="logo" class="">
+                            <span href="#"><img src="img/favicons/favicon-32x32.png" sizes="32x32" /></span>
+                        </div>
+                        <!-- #logo END -->
+    </a>
 
-    <div class="about-content">
-        This is a simple webpage to allow guests prior to our very special day to read a bit about each other. You can contribute to the event either at the venue, or via the bank details shared with you on the invitation card :) <br>
-        Every entry in this guest list is private and copyrighted by the page author. Feel free to <a href="https://github.com/dnzengou/finaste/issues">file a request</a> for correcting eventual errors.<br>
-        This gallery is based on Christophe Viau @d3visualization visualization with the help and support from the community and support from <a href="http://www.datameer.com/">Datameer, </a>and <a href="https://twitter.com/mrejfox">@mrejfox</a> for styling. It is modified by Dez <a href="https://twitter.com/desireyavro">@DesireYavro</a>. 
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="guests.html">Guests</a>
+        <!--<a class="nav-link disabled" href="index.html">Guests</a>-->
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 main-container">
+
+            <div id="container">
+
+      <br>
+
+                <div id="info">
+                    <input type="text" autofocus="true" title="" placeholder="Search guest..."/ style="font-size:24px;" id="input" />
+                    <div id="output"></div>
+
+                </div>
+                <!-- info -->
+
+                <!-- begin results container, content generated dynamically -->
+                <div id="results"></div>
+                <!-- end results container, content generated dynamically -->
+
+      <br>
+
+      <br>
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+
+
+<!-- knowledge -->
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1"></h5>
+        <div class="row">
+
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="img/wedding_Dez&Lindy_recto_2.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Wedding details</h4>
+                                    <p class="card-text"> </p>
+                                    <a href="#" class="btn btn-primary btn-sm" title='more'><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"> The Ceremony and Time </h4>
+                                    <p class="card-text">
+                                      <ul>
+                                        <li>The church bells will start chiming and the ceremony will start at exactly <code>13:30</code> sharp! So, we advise you to be at the church latest at <b>13:00</b>, to have time to say hi to the other guests, get your program, find your seat, and be relaxed and ready.</li>
+<li>Our dear friends Istvan & Eva are “<b>Mr & Madame Mise en Place</b>” of the wedding and will be there to welcome you and answer any questions you might have. 
+The ceremony will be held in <b>English</b>. Songs in <b>Swedish</b> will be translated to English in the program.</li>
+                                      </ul></p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" id='international'>
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="" alt=""></p>
+                                    <h4 class="card-title">Wedding present</h4>
+                                    <p class="card-text">
+                                      <ul>
+                                        <li><a href="" target="_blank" style="color:#68B1A0"></a> </li>
+                                        <ul>
+                                    </p>
+                                    <a href="#" class="btn btn-primary btn-sm" title='more'><i class="fa fa-gift"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <p><img class=" img-fluid" src="img/fb_pt_dez&lindy_beach.jpg" alt=""></p>
+                                <h4 class="card-title">Gift</h4>
+                                <!--<code></code>-->
+                                    <p class="card-text">If you want to give us a wedding gift, we would very much appreciate a contribution to our honeymoon, which you can give in several different ways:
+                                        <ul>
+                                          <li> At the party there will be a box in which you can put your contribution and a card.</li>
+<li> Transfer to our account in <code>Swedbank</code>. Clearing nr: <b>83683</b> | Account nr: <b>344 841 765 3</b></li>
+<li> Swish to <b>0700-37 09 27</b></li>
+                                        </ul>
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" id='international'>
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="" alt=""></p>
+                                    <h4 class="card-title">Dress code</h4>
+                                    <p class="card-text">
+                                      <ul>
+                                        <li><a href="" target="_blank" style="color:#68B1A0"></a> </li>
+                                        <ul>
+                                    </p>
+                                    <a href="#" class="btn btn-primary btn-sm" title='more'><i class="fa fa-thumbs-o-up"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <p><img class=" img-fluid" src="img/black-friday-casual-cheerful-1391380.jpg" alt="https://www.independentfemme.com/wp-content/uploads/2017/09/The-Best-Dressy-Casual-Attire-Ideas-for-Him-and-Her.png"></p>
+                                <h4 class="card-title"></h4>
+                                <code>“Dressy casual”</code>
+                                    <p class="card-text">
+                                        <ul>
+                                          <li>Some of you have asked what the dress code means, so here’s the main description: For ladies -try a cocktail dress or a dressy skirt and top. An elegant pantsuit is also appropriate. Floor-length gowns, however, might be too fancy. Pair with heels, nice wedges or elegant flats. For the men - a suit in a light color, with or without tie. But most important is that you feel comfortable and handsome/pretty.</li>
+<li>Please feel free to reach out for further info. 
+We are so much looking forward to see you all on our wedding day! <b>:D</b></li>
+                                        </ul>
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside" id='local'>
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="" alt=""></p>
+                                    <h4 class="card-title">Where</h4>
+                                    <p class="card-text">
+                                      <ul>
+                                        <li><a href="" target="_blank" style="color:#68B1A0"></a> </li>
+                                        <ul>
+                                    </p>
+                                    <a href="https://upload.wikimedia.org/wikipedia/commons/a/a6/%C3%96dsm%C3%A5ls_kyrka.jpg" class="btn btn-primary btn-sm" title='more'><i class="fa fa-map-marker"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <p><img class=" img-fluid" src="img/odsmals_kyrka.jpg" alt="https://t-ec.bstatic.com/images/hotel/max1280x900/388/38887159.jpg"></p>
+                                    <h4 class="card-title" href="https://www.google.com/maps/dir/Stenungsund,+Stenungsund/Jordhammars+Herrg%C3%A5rd,+Jordhammars+Herrg%C3%A5rd+101,+444+95+%C3%96dsm%C3%A5l/@58.0863964,11.8000977,13z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x46456e3d49d0f19d:0x46aa67b52cc08fb9!2m2!1d11.8247603!2d58.0725921!1m5!1m1!1s0x464564831f47e8b1:0x12b72320ca2757cb!2m2!1d11.841786!2d58.0996223!3e3" style="color:#68B1A0">Directions</h4>
+                                    <!--<code> </code>-->
+                                    <p class="card-text">
+                                        <ul>
+                                          <li>From <code>Stenungsund Station</code> you can take Bus nr 4 to <code><a href="https://www.google.com/maps/place/Jordhammars+Herrg%C3%A5rd/@58.0996223,11.8395973,17z/data=!3m1!4b1!4m5!3m4!1s0x464564831f47e8b1:0x12b72320ca2757cb!8m2!3d58.0996223!4d11.841786">Jordhammars Herrgård</a></code> and <code><a href="https://www.google.com/maps/place/%C3%96dsm%C3%A5ls+church/@58.104547,11.8443773,17z/data=!3m1!4b1!4m5!3m4!1s0x46456de5a57d1b29:0x809fdb294ce36c3b!8m2!3d58.104547!4d11.846566">Ödsmåls Kyrka</a></code> (Jordhammar is the stop before Ödsmåls Kyrka). It only takes <b>9 min</b>. The bus stops are just 50 m from the destinations, which both can easily be seen on your left side of the road. Of course, you can also take bus 4 back to Stenungsund if you like.<br>
+Taxi Stenungsund phone nr is: <a href="tel:0046303771515"><i>(click here)</i> <i class="fa fa-phone"></i></a>, but taxi is expensive in Sweden. 
+(<code>Stenungsund station – Jordhammar/Ödsmål</code>: <b>200 kr</b>, <code>Gothenburg center – Jordhammar/Ödsmål</code>: <b>1025 kr</b>.)</li>
+<li>Between Gothenburg and Stenungsund you can go by bus or train. On the trains you can buy ticket onboard, but for the buses you need to buy a ticket at the station before, or at all kiosks named “Pressbyrån” and many other kiosks.</li>
+<li>IF you would somehow get lost or need additional directions, make sure to have Mme Mise en Place ;) <b>Eva</b>’s, number with you: <a href="tel:0046708140975"><i>(click here)</i> <i class="fa fa-phone"></i></a></li>
+                                        </ul>
+                                      <ul>
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" id='international'>
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="" alt=""></p>
+                                    <h4 class="card-title">The Party</h4>
+                                    <p class="card-text">
+                                      <ul>
+                                        <li><a href="" target="_blank" style="color:#68B1A0"></a> </li>
+                                        <ul>
+                                    </p>
+                                    <a href="#" class="btn btn-primary btn-sm" title='more'><i class="fa fa-cutlery"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <p><img class=" img-fluid" src="img/38887159_Jordhammars-Herrgard.jpg" alt="https://www.google.com/maps/place/%C3%96dsm%C3%A5ls+church/@58.104547,11.8443773,17z/data=!3m1!4b1!4m5!3m4!1s0x46456de5a57d1b29:0x809fdb294ce36c3b!8m2!3d58.104547!4d11.846566"></p>
+                                <h4 class="card-title">The Dinner and Party</h4>
+                                <!--<code></code>-->
+                                    <p class="card-text">
+                                      <ul><a href="" style="color:#68B1A0"></a>
+                                        <ul>
+                                          <li>After the ceremony in church, all guests will be transported the short distance (<b>1 km</b>) to Jordhammar. If anyone would like to walk (approx. <b>13 min</b>) that’s ok too.</li>
+<li>There will be a welcome drink, buffet, wedding cake and coffee. Our <b>toastmaster</b> is Lindy’s very dear old friend <b>Mimo Moqvist</b>. If you’d like to hold a speech, sing a song, play a sketch, read a poem, or do something else to make our big day extra special, she’s the one to contact. You can reach her at: <a href="tel:0046702046054"><i>(click here)</i> <i class="fa fa-phone"></i></a> or <a href="mailto:marie.moqvist@katrineholm.se?Subject=Hej%20dear" target="_top"><i>(click here)</i> <i class="fa fa-envelope"></i></a> </li>
+                                        </ul>
+                                      <ul>
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+            <!-- knowledge item -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" id='international'>
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="" alt=""></p>
+                                    <h4 class="card-title">B&B</h4>
+                                    <p class="card-text"> <code></code>
+                                      <ul>
+                                        <li><a href="" target="_blank" style="color:#68B1A0"></a> </li>
+                                        <ul>
+                                    </p>
+                                    <a href="#" class="btn btn-primary btn-sm" title='more'><i class="fa fa-bed"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <p><img class=" img-fluid" src="img/HI415864933_jardhammar_room.jpg" alt="https://edge.media.datahc.com/HI415864933.jpg"></p>
+                                <h4 class="card-title">Accomodation</h4>
+                                <!--<code></code>-->
+                                    <p class="card-text">As written in the invitation, you can book accommodation at <code>Jordhammars Herrgård</code> if you like. For the wedding night <code>6-7 of July</code> the price is <b>300 SEK</b> per person (approx. <b>30 €</b>). For all other nights the prices are as follows.
+                                        <ul>
+                                          <li>Single room <b>500 SEK</b></li>
+<li>Double room <b>700 SEK</b></li>
+<li>Triple room <b>950 SEK</b></li>
+<li>Family room (4 beds) <b>1050 SEK</b></li>
+<li>Sheets and towels <b>100 SEK</b>/person</li>
+<li>Breakfast <b>75 SEK</b>/person</li>
+                                        </ul>If you want to have breakfast you have to book it in advance. All room bookings can be done directly to Lindy at <a href="mailto:lindy.antonsson@gmail.com?Subject=Hej%20hej" target="_top"><i>(click here)</i> <i class="fa fa-envelope"></i></a> There are not so many rooms left, so don’t wait long…<br> If you’re curious to see the place, check their website at <a  target="_blank" href="www.jordhammarsherrgard.se"></a>.
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./knowledge item -->
+
+        </div>
+    </div>
+</section>
+<!-- knowledge -->
+
+    <hr>
+
+    <div style="text-align:center;">
+        <div class="col s8 offset-s2">
+            <a href="" class="btn btn-lg btn-outline center-block" title="up" style="background-color:transparent; color:#26a69a"><i class="fa fa-chevron-up fa-5x" aria-hidden="true"></i></a>
+
+            <a href="index.html" class="btn btn-lg btn-outline center-block" title="Home" style="background-color:transparent; color:#26a69a"><i class="fa fa-home fa-5x" aria-hidden="true"></i></a>
+
+            <a href="https://www.twitter.com" class="btn btn-lg btn-outline center-block" title="t@DesireYavro" style="background-color:transparent; color:#26a69a"><i class="fa fa-twitter fa-5x" aria-hidden="true"></i></a>
+        </div>
     </div>
 
-</div>
-<div id="nav">
-    <div class="menu1-container"></div>
-    <div class="menu2-container">
-        <input type="text" class="menu2-search" />
-    </div>
-</div>
-<div id="list">
-    <div class="menu3-container"></div>
-</div>
+    <!-- Footer -->
+    <footer id="footer">
 
-<script type="text/javascript">
+        <ul class="text-center">
 
-    d3.select('.about-link').on('click', function(d, i){
-        d3.event.preventDefault();
-        d3.select('.about-box').style({display: 'block'});
-    })
-    d3.select('.about-close').on('click', function(d, i){ d3.select('.about-box').style({display: 'none'}); });
+            <p><a href="#">indy & Dez Wedding</a> &copy; 2019 - made by <a href="desireyavro.com">desireyavro</a> with <i class="fa fa-coffee" style="color:brown"></i> & <i class="fa fa-heart" style="color:pink"></i>
+        </ul>
 
-    var vizTypeScale = d3.scale.category20c();
-    var splitChar = '; ';
-    var json;
+    </footer>
 
-    var data1 = {
-        href: function(d, i){return '#'+ d.dimension+'=all';},
-        html: function(d, i){ return d.displayName;}
-    };
-
-    var data2 = {
-        href: function(d, i){ return '#'+ d.dimension+'='+d.key; },
-        html: function(d, i){ return d.key+' <span class="value">'+ d.value+'</span>';}
-    };
-
-    var data3 = {
-        href: function(d, i){return d.url;},
-        html: function(d, i){
-            var content = d.title;
-            if(d.guest) content += ' '+'<span class="author">'+d.author+'</span>';
-            if(d.thumbnail) content += "<br /> <img src='"+d.thumbnail+"' class='thumbnail'/><br />";
-            return content;}
-    };
-
-    function getDocHeight() {
-        var doc = document;
-        return Math.max(
-            doc.body.scrollHeight, doc.documentElement.scrollHeight,
-            doc.body.offsetHeight, doc.documentElement.offsetHeight,
-            doc.body.clientHeight, doc.documentElement.clientHeight
-        );
-    }
-
-    var thumbSize = 250;
-    var menu3Width = parseInt(d3.select('#list').style('width'));
-    var numInOneScreen = Math.ceil(menu3Width / thumbSize) * Math.ceil(getDocHeight() / thumbSize);
-    var numInView = numInOneScreen;
-
-    // d3.csv('https://docs.google.com/spreadsheet/pub?key=0&single=true&gid=0&output=csv', function(error, _json){
-    d3.csv('d3_guests.csv', function(error, _json){
-//    d3.csv('d3gallery_feb282013.csv', function(error, _json){
-        json = _json;
-        d3.select('.example-count').text('(' + json.length + 'guests <3)');
-        buildList(dataTransformMenu1(), '.menu1-container', data1);
-        buildList(dataTransformMenu2('visualizationType'), '.menu2-container', data2);
-//        buildList(dataView(dataTransformMenu3('title', 'all'), numInView), '.menu3-container', data3);
-        processLocationHash();
-    });
-
-    function dataTransformMenu1(){
-        //TODO: change in spreadsheet
-        var dimensionsMap = {author: 'Guest', visualizationType: 'Connection', title: 'Title'};
-        return d3.keys(dimensionsMap).map(function(d, i){return {dimension: d, displayName: dimensionsMap[d]};});
-    }
-
-    function dataTransformMenu2(dimension, filter){
-        var splitted = d3.merge(json.map(function(d, i){
-            return splitter(d[dimension]);
-        }));
-        var filtered = (filter) ? splitted.filter(function(d, i){ return d.toLowerCase().indexOf(filter.toLowerCase()) != -1; }) : splitted;
-        var unemptied = filtered.map(function(d, i){return (d == '') ? 'untagged' : d;});
-        var grouped = groupCount(unemptied);
-        var prepared = d3.entries(grouped).map(function(d, i){
-                d.dimension = dimension;
-                return d;
-            });
-        var sorted = prepared.sort(function(a, b){return b.value - a.value});
-        return sorted;
-    }
-
-    function splitter(data){
-        return (data.indexOf(splitChar) !== -1) ? data.split(splitChar) : data;
-    }
-
-    function groupCount(arr) {
-        var uniques = {}, val;
-        var dups = {};
-        for (var i = 0, len = arr.length; i < len; i++) {
-            val = arr[i];
-            if (val in uniques) {
-                uniques[val]++;
-                dups[val] = uniques[val];
-            } else uniques[val] = 1;
-        }
-//        return(dups);
-        return(uniques);
-    }
-
-    var cachedData;
-    function dataTransformMenu3(dimension, value){
-        var filtered = json.filter(function(d, i){
-            var splitted = splitter(d[dimension]);
-            if (value == 'all') return true;
-            else if(value == 'untagged') return (splitted == '');
-            //TODO: use the grouped data instead
-            else if(splitted.indexOf(value) >= 0) return true;
-            else return false;
-        });
-        var sorted = filtered.sort(function(a, b){
-                return (a.thumbnail == '') - (b.thumbnail == '');
-            });
-        cachedData = sorted;
-        return sorted;
-    }
-
-    function dataView(data, num){
-        return data.slice(0, num);
-    }
-
-    function buildList(data, containerSelector, content){
-        d3.select(containerSelector).selectAll("li.entry").remove();
-        updateList(data, containerSelector, content);
-    }
-
-    function updateList(data, containerSelector, content){
-        var entries = d3.select(containerSelector)
-            .selectAll("li.entry")
-            .data(data)
-            .enter().append("li")
-            .attr('class', 'entry')
-            .append('a')
-            .attr('href', content.href)
-            .html(content.html);
-    }
-
-    d3.select('.menu2-search')
-        .on('change', function(d, i){ filterList(this.value); })
-        .on('keyup', function(d, i){ filterList(this.value); });
-    d3.select('body').on('mouseover', function(){
-            if (d3.event.target.nodeName == 'A') d3.select('.menu2-search').node().blur();
-        });
-
-    function filterList(value){
-        var dimension = window.location.hash.substring(1).split('=')[0] || 'visualizationType';
-        buildList(dataTransformMenu2(dimension, value), '.menu2-container', data2);
-    }
-
-    function processLocationHash(){
-        d3.select('#list').node().scrollTop = 0;
-        numInView = numInOneScreen;
-        if(window.location.hash) {
-            var hash = window.location.hash.substring(1);
-            var hashSplit = hash.split('=');
-            if(hashSplit[1] == 'all') buildList(dataTransformMenu2(hashSplit[0]), '.menu2-container', data2);
-            buildList(dataView(dataTransformMenu3(hashSplit[0], hashSplit[1]), numInView), '.menu3-container', data3);
-        }else{
-            buildList(dataView(dataTransformMenu3('title', 'all'), numInView), '.menu3-container', data3);
-        }
-    }
-
-    d3.select(window).on('hashchange', function () {
-        processLocationHash();
-    });
-
-    
-
-    d3.select('#list').on('scroll', function(d, i){
-        if(this.scrollHeight - this.scrollTop <= getDocHeight()){
-            numInView += numInOneScreen;
-            updateList(dataView(cachedData, numInView), '.menu3-container', data3);
-        }
-    });
-
-</script>
-
+    <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
