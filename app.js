@@ -17,7 +17,7 @@ input.onblur = function() {
 }
 
 // Algolia login
-var client = algoliasearch("N637HXAMBS", "e0f889ef9198d699ed7577646820ea12");
+var client = algoliasearch("#", "#");
 var index = client.initIndex('guests');
 //var client = algoliasearch("");
 
